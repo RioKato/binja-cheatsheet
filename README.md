@@ -45,3 +45,4 @@
 ## Links
 
 - [Binary Ninja Python API](https://api.binary.ninja)
+- [Binary Ninja User Documentation: Developer Guide](https://docs.binary.ninja/dev/index.html)
