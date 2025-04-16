@@ -1,0 +1,12 @@
+digraph {
+  BinaryView -> Function [label = ".functions"];
+  Function -> BasicBlock [label = ".basic_blocks"];
+  BasicBlock -> DisassemblyTextLine [label = ".disassembly_text"];
+  Function -> ReferenceSource [label = ".caller_sites|.call_sites"];
+  ReferenceSource -> Function [label = ".function"];
+  Function -> Function [label = ".callers|.callees"];
+  BinaryView -> DataVariable [label = ".data_vars"];
+  BinaryView -> Type [label = ".types"];
+  BinaryView -> SymbolMapping [label = ".symbols"];
+  BinaryView -> StringReference [label = ".strings"];
+}
