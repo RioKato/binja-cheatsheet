@@ -12,6 +12,7 @@
 
 - `MediumLevelILVar` is a lifting of `Variable` to `MediumLevelILInstruction`.
 - `get_var_definitions(var: Variable)→ List[MediumLevelILInstruction]`
+- `get_var_uses(var: Variable)→ List[MediumLevelILInstruction]`
 
 ![mlil](mlil.png)
 
@@ -20,6 +21,7 @@
 - In static identity assignment, a variable(`Variable`) may be converted into multiple variables(`SSAVariable`).
 - `MediumLevelILVarSsa` is a lifting of `SSAVariable` to `MediumLevelILInstruction`.
 - `get_ssa_var_definition(ssa_var: SSAVariable | MediumLevelILVarSsa)→ MediumLevelILInstruction | None`
+- `get_ssa_var_uses(ssa_var: SSAVariable | MediumLevelILVarSsa)→ List[MediumLevelILInstruction]`
 
 ![mlilssa](mlilssa.png)
 
@@ -39,3 +41,7 @@
 - `PointerType.target`
 - `Function.(create|delete)_user_var`
 - `Function.get_parameter_at`
+
+## Links
+
+- [Binary Ninja Python API](https://api.binary.ninja)
