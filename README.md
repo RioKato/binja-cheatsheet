@@ -11,7 +11,7 @@
 ### MLIL
 
 - `MediumLevelILVar` is a lifting of `Variable` to `MediumLevelILInstruction`.
-- `MediumLevelILFunction.get_var_definitions(var: Variable)→ List[MediumLevelILInstruction]`
+- `get_var_definitions(var: Variable)→ List[MediumLevelILInstruction]`
 
 ![mlil](mlil.png)
 
@@ -19,7 +19,7 @@
 
 - In static identity assignment, a variable(`Variable`) may be converted into multiple variables(`SSAVariable`).
 - `MediumLevelILVarSsa` is a lifting of `SSAVariable` to `MediumLevelILInstruction`.
-- `MediumLevelILFunction.get_ssa_var_definition(ssa_var: SSAVariable | MediumLevelILVarSsa)→ MediumLevelILInstruction | None`
+- `get_ssa_var_definition(ssa_var: SSAVariable | MediumLevelILVarSsa)→ MediumLevelILInstruction | None`
 
 ![mlilssa](mlilssa.png)
 
@@ -38,11 +38,4 @@
 - `Type.named_type_from_registered_type`
 - `PointerType.target`
 - `Function.(create|delete)_user_var`
-
-## memo
-
-    * `BinaryView.define_user_data_var`は既に存在する`data_var`を上書きする
-    * `PointerType.target`は、デリファレンスする
-    * BinaryView.stringsと型の`char[]`は無関係
-        * たとえ文字列を、char以外の肩に変換しても、stringsから削除されない
-        * 逆に見つけた文字列に、`char[]`を割り当てても、stringsに追加されない
+- `Function.get_parameter_at`
