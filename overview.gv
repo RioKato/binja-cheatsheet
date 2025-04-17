@@ -1,13 +1,13 @@
 digraph {
-  BinaryView -> Function [label = ".functions"];
-  Function -> BasicBlock [label = ".basic_blocks"];
-  BasicBlock -> DisassemblyTextLine [label = ".disassembly_text"];
-  Function -> DisassemblyTextLine [label = ".instructions"];
-  Function -> ReferenceSource [label = ".call(er)?_sites"];
-  ReferenceSource -> Function [label = ".function"];
-  Function -> Function [label = ".calle(rs|es)"];
-  BinaryView -> DataVariable [label = ".data_vars"];
-  BinaryView -> Type [label = ".types"];
-  BinaryView -> SymbolMapping [label = ".symbols"];
-  BinaryView -> StringReference [label = ".strings"];
+  BinaryView -> Function [label=".functions"];
+  Function -> BasicBlock [label=".basic_blocks"];
+  BasicBlock -> DisassemblyTextLine [label=".disassembly_text"];
+  Function -> DisassemblyTextLine [label=".instructions"];
+  Function -> ReferenceSource [label=".call(er)?_sites"];
+  ReferenceSource -> Function [label=".function"];
+  Function -> Function [label=".calle(rs|es)"];
+  BinaryView -> DataVariable [label=".data_vars"];
+  BinaryView -> Type [label=".types"];
+  BinaryView -> SymbolMapping [label=".symbols"];
+  BinaryView -> StringReference [label=".strings"];
 }

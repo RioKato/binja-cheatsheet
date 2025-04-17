@@ -1,11 +1,11 @@
 digraph {
   Function -> MediumLevelILFunction [label=".mlil"];
   MediumLevelILFunction -> MediumLevelILInstruction [label="get_var_(definitions|uses)"];
-  Function -> ReferenceSource [label = ".call(er)?_sites"];
-  ReferenceSource -> Function [label = ".function"];
-  ReferenceSource -> MediumLevelILCall [label = ".mlil"];
-  MediumLevelILCall -> MediumLevelILInstruction [label = ".params"];
+  Function -> ReferenceSource [label=".call(er)?_sites"];
+  ReferenceSource -> Function [label=".function"];
+  ReferenceSource -> MediumLevelILCall [label=".mlil"];
+  MediumLevelILCall -> MediumLevelILInstruction [label=".params"];
   MediumLevelILInstruction -> MediumLevelILVar [style="dotted"];
-  MediumLevelILVar -> Variable [label = ".var"];
-  MediumLevelILCall -> Variable [label = ".output"];
+  MediumLevelILVar -> Variable [label=".var"];
+  MediumLevelILCall -> Variable [label=".output"];
 }

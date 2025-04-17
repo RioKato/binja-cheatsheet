@@ -1,13 +1,14 @@
 digraph {
   Function -> MediumLevelILFunction [label=".mlil"];
-  MediumLevelILFunction -> MediumLevelILInstruction [label="get_ssa_var_(definition|uses)"];
-  Function -> ReferenceSource [label = ".call(er)?_sites"];
-  ReferenceSource -> Function [label = ".function"];
-  ReferenceSource -> MediumLevelILCall [label = ".mlil"];
-  MediumLevelILCall -> MediumLevelILCallSsa [label = ".ssa_form"];
-  MediumLevelILCallSsa -> MediumLevelILInstruction [label = ".params"];
+  MediumLevelILFunction -> "MediumLevelILFunction {SSA form}" [label=".ssa_form"]
+  "MediumLevelILFunction {SSA form}" -> MediumLevelILInstruction [label="get_ssa_var_(definition|uses)"];
+  Function -> ReferenceSource [label=".call(er)?_sites"];
+  ReferenceSource -> Function [label=".function"];
+  ReferenceSource -> MediumLevelILCall [label=".mlil"];
+  MediumLevelILCall -> MediumLevelILCallSsa [label=".ssa_form"];
+  MediumLevelILCallSsa -> MediumLevelILInstruction [label=".params"];
   MediumLevelILInstruction -> MediumLevelILVarSsa [style="dotted"];
-  MediumLevelILVarSsa -> SSAVariable [label = ".src"];
-  MediumLevelILCallSsa -> SSAVariable [label = ".output"];
-  SSAVariable -> Variable [label = ".var"];
+  MediumLevelILVarSsa -> SSAVariable [label=".src"];
+  MediumLevelILCallSsa -> SSAVariable [label=".output"];
+  SSAVariable -> Variable [label=".var"];
 }
