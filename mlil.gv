@@ -1,7 +1,7 @@
 digraph {
   Function -> MediumLevelILFunction [label=".mlil"];
   MediumLevelILFunction -> MediumLevelILInstruction [label="get_var_(definitions|uses)"];
-  Function -> ReferenceSource [label = ".caller_sites|.call_sites"];
+  Function -> ReferenceSource [label = ".call(er)?_sites"];
   ReferenceSource -> Function [label = ".function"];
   ReferenceSource -> MediumLevelILCall [label = ".mlil"];
   MediumLevelILCall -> MediumLevelILInstruction [label = ".params"];

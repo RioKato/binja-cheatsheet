@@ -2,9 +2,10 @@ digraph {
   BinaryView -> Function [label = ".functions"];
   Function -> BasicBlock [label = ".basic_blocks"];
   BasicBlock -> DisassemblyTextLine [label = ".disassembly_text"];
-  Function -> ReferenceSource [label = ".caller_sites|.call_sites"];
+  Function -> DisassemblyTextLine [label = ".instructions"];
+  Function -> ReferenceSource [label = ".call(er)?_sites"];
   ReferenceSource -> Function [label = ".function"];
-  Function -> Function [label = ".callers|.callees"];
+  Function -> Function [label = ".calle(rs|es)"];
   BinaryView -> DataVariable [label = ".data_vars"];
   BinaryView -> Type [label = ".types"];
   BinaryView -> SymbolMapping [label = ".symbols"];
