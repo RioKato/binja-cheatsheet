@@ -48,7 +48,9 @@ def serch_import_module():
 
                 match mlilssa_set:
                     case binaryninja.MediumLevelILSetVarSsa(src=binaryninja.MediumLevelILLoadSsa(src=binaryninja.MediumLevelILConstPtr(constant=addr))):
-                        print(hex(addr))
+                        var = bv.data_vars[addr]
+                        if var.name:
+                            ssa.output[0].var.name = var.name[8:]
 
 
 __pyx_string_tab: int = 0x00036540
