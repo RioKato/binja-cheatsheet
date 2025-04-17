@@ -1,0 +1,19 @@
+digraph {
+  Call -> Localcall [style="dotted"];
+  Localcall -> Tailcall [style="dotted"];
+  Call -> Syscall [style="dotted"];
+  BaseILInstruction -> VariableInstruction [style="dotted"];
+  BaseILInstruction -> Constant [style="dotted"];
+  Localcall -> MediumLevelILCall [style="dotted"];
+  Localcall -> MediumLevelILCallSsa [style="dotted"];
+  Tailcall -> MediumLevelILTailcall [style="dotted"];
+  Tailcall -> MediumLevelILTailcallSsa [style="dotted"];
+  Syscall -> MediumLevelILSyscall [style="dotted"];
+  Syscall -> MediumLevelILSyscallSsa [style="dotted"];
+  VariableInstruction -> MediumLevelILVar [style="dotted"];
+  VariableInstruction -> MediumLevelILVarSsa [style="dotted"];
+  Constant -> MediumLevelILConstBase [style="dotted"];
+  MediumLevelILConstBase -> MediumLevelILConst [style="dotted"];
+  MediumLevelILConstBase -> MediumLevelILConstData [style="dotted"];
+  MediumLevelILConstBase -> MediumLevelILConstPtr [style="dotted"];
+}
