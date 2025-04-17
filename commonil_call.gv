@@ -1,0 +1,11 @@
+digraph {
+  Call -> Localcall [style="dotted"];
+  Localcall -> Tailcall [style="dotted"];
+  Call -> Syscall [style="dotted"];
+  Localcall -> MediumLevelILCall [style="dotted"];
+  Localcall -> MediumLevelILCallSsa [style="dotted"];
+  Tailcall -> MediumLevelILTailcall [style="dotted"];
+  Tailcall -> MediumLevelILTailcallSsa [style="dotted"];
+  Syscall -> MediumLevelILSyscall [style="dotted"];
+  Syscall -> MediumLevelILSyscallSsa [style="dotted"];
+}
