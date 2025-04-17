@@ -27,7 +27,8 @@
 
 ### commonil
 
-![commonil](commonil.png)
+![commonil_call](commonil_call.png)
+![commonil_insn](commonil_insn.png)
 
 ## Frequently used functions
 
