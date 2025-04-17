@@ -6,6 +6,8 @@ digraph {
   ReferenceSource -> Function [label=".function"];
   ReferenceSource -> MediumLevelILCall [label=".mlil"];
   MediumLevelILCall -> MediumLevelILCallSsa [label=".ssa_form"];
+  MediumLevelILCall -> MediumLevelILFunction [label=".function"];
+  MediumLevelILCallSsa -> "MediumLevelILFunction {SSA form}" [label=".function"];
   MediumLevelILCallSsa -> MediumLevelILInstruction [label=".params"];
   MediumLevelILInstruction -> MediumLevelILVarSsa [style="dotted"];
   MediumLevelILVarSsa -> SSAVariable [label=".src"];

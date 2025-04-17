@@ -4,6 +4,7 @@ digraph {
   Function -> ReferenceSource [label=".call(er)?_sites"];
   ReferenceSource -> Function [label=".function"];
   ReferenceSource -> MediumLevelILCall [label=".mlil"];
+  MediumLevelILCall -> MediumLevelILFunction [label=".function"];
   MediumLevelILCall -> MediumLevelILInstruction [label=".params"];
   MediumLevelILInstruction -> MediumLevelILVar [style="dotted"];
   MediumLevelILVar -> Variable [label=".var"];
