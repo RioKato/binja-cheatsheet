@@ -35,5 +35,22 @@ def define_string_tab(string_tab_start: int):
             p.name = f'__pyx_k_{name}'
 
 
+ImportModule: binaryninja.Function = bv.get_functions_by_name('ImportModule')[0]
+
+
+def serch_import_module():
+    for cs in ImportModule.caller_sites:
+        if mlil := cs.mlil:
+            ssa = mlil.ssa_form
+
+            if ssa.params and isinstance(ssa.params[0], binaryninja.MediumLevelILVarSsa):
+                mlilssa_set = cs.function.mlil.ssa_form.get_ssa_var_definition(ssa.params[0])
+
+                match mlilssa_set:
+                    case binaryninja.MediumLevelILSetVarSsa(src=binaryninja.MediumLevelILLoadSsa(src=binaryninja.MediumLevelILConstPtr(constant=addr))):
+                        print(hex(addr))
+
+
 __pyx_string_tab: int = 0x00036540
 define_string_tab(__pyx_string_tab)
+serch_import_module()
