@@ -34,7 +34,7 @@
 
 - `BinaryView.(define|undefine)_user_(data_var|type)`
 - `BinaryView.(create|remove)_user_function`
-- `BinaryView.get_function(_at|s_by_name)`
+- `BinaryView.get_function(_at|s_by_name|s_containing)`
 - `BinaryView.get_string_at`
 - `BinaryView.(get|set)_comment_at`
 - `BinaryView.read`
